@@ -39,9 +39,18 @@ h6 {font-size: 10%;}
 
 
 
-#homepage2{
+#homepage2
+{
   border: 0px solid black;
   background:url(images/tractor.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding:;
+}
+#homepage3
+{
+  border: 0px solid black;
+  background:url(images/comm-dev.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   padding:;
@@ -51,15 +60,7 @@ h6 {font-size: 10%;}
 
 <body>
 <!-- Sidebar -->
-<script>
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
 <div class="w3-sidebar w3-bar-block w3-border-right w3-mobile" style="display:none" id="mySidebar">
   <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
   <a href="#" class="w3-bar-item w3-button">Home</a>
@@ -75,40 +76,70 @@ function w3_close() {
   	</div>
 
 	<div class="w3-padding-small w3-display-middleup">
-    	<h1 class="w3-marck" >Benjamin Kihuria</h1>
+    	<h1 class ="w3-marck" style="font-size: 2vw">Benjamin Kihuria</h1>
   	</div>
   	<div class="w3-display-middledown w3-border-right">
   		<ul class="w3-ul w3-card w3-lato" style="width:100%; background-color: rgb(120, 36, 25);color: rgb(203,150,137);">
     		<li style="font-size: 1vw" class="w3-hover-black">ENGINEER</li>
-    		<li style="font-size: 1vw" class="w3-hover-black">COMMUNITY DEVELOPMENT</li>
+    		<li style="font-size: 1vw" class="w3-hover-black">COMMUNITY DEV.</li>
     		<li style="font-size: 1vw" class="w3-hover-black">PHOTOGRAPHY</li>
     		<li style="font-size: 1vw" class="w3-hover-black">TRAVELLER</li>
   		</ul>
   	</div>
 </div>
 
-<!-- Page Content- Home Page 2 -->
+<!-- Page Content- Home Page section 2 -->
 <div id="homepage2" class="w3-cell-row" style="height: 100vh">
-	<div class="w3-cell" style="width: 10%"> 
-			<button class="w3-btn w3-border w3-border-green w3-round-large" style="color:rgb(255,255,255)">Engineering</button>
+	<div class="w3-cell w3-container" style="width: 10%; padding-top:3%"> 
+			<button class="w3-btn w3-border w3-border-green w3-round-large w3-livvic" style="color:rgb(255,255,255)">Engineering</button>
 
 	</div>
 
-	<div class="w3-cell w3-cell-middle" style="width: 60%"> 
+	<div class="w3-cell w3-container" style="width: 60%; padding-top: 10%"> 
 		<p class="w3-livvic"><i>"African solutions to African problems"</i></p>
-		<p class="w3-livvic">Thabo Mbeki</p>
-		<p class="w3-livvic">Former South Africa president</p>
+		<p class="w3-livvic">Thabo Mbeki (South Africa president, 1999-2008)</p>
 	</div>
 
-	<div class="w3-cell w3-green w3-opacity w3-cell-middle" style="width:30%"> 
-		<div class="wb-card-4 ">
-			<p class="w3-livvic">Every year, Kenya loses up to sh. 150 Billion ($1.5 Billion) worth of agricultural produce through post-harvest losses. Up to 13% of these losses constitutes Irish potatoes, yet, if stored at between 5-10 Celcius and 93% relative humidity, Irish potatoes can be stored up to 5 months. </p>
+	<div class="w3-cell w3-opacity w3-cell-middle" style="width:30%; background-color:rgb(18,80,5); color:rgb(255,234,189); font-size: 100%"> 
+		<div class="wb-card-4 w3-container">
+			<p class="w3-livvic">Every year, Kenya loses up to sh. 150 Billion ($1.5 Billion) worth of agricultural produce through post-harvest losses. Up to 13% of these losses constitutes Irish potatoes, yet, if stored at between 5-10 Celsius and 93% relative humidity, Irish potatoes can be stored up to 5 months. Precision agriculture increases the yield and reduces post-harvest losses for smallholder farmers. </p>
+			<p class="w3-livvic">ClimateSense is a tool that <b>senses</b> temperature, humidity, soil moisture and soil nutrients, <b>records</b> and <b>transmits</b> the data within a local database and remotely through SMS & allows for the <b>control</b> of actuators such as water valves, fans, switches within a controlled environment</p>
 		</div>
 	</div>
 
 </div>
+<!-- Page Content- Home Page section 3 -->
+<div id="homepage3" class="w3-cell-row" style="height: 100vh; padding-top:5%; padding-bottom:5%">
+	<div class="w3-container" style="background-color:rgba(255,255,255,0.5); height: 100%">
+		<div class="w3-cell w3-container" style="width: 10%;padding-top: 3%"> 
+			<button class="w3-btn w3-round-large w3-livvic" style="color:rgb(15,22,28); border-style: solid; border-color:rgb(15,22,28); border-width: 1px">Community Development</button>
+
+		</div>
+
+		<div class="w3-cell w3-container" style="width: 60%; padding-top: 10%"> 
+			<p class="w3-livvic"><i>"African solutions to African problems"</i></p>
+			<p class="w3-livvic">Thabo Mbeki (South Africa president, 1999-2008)</p>
+		</div>
+
+		<div class="w3-cell w3-opacity w3-cell-middle" style="width:30%; color:rgb(255,234,189); font-size: 100%"> 
+			<div class="wb-card-4 w3-container">
+				<p class="w3-livvic">Every year, Kenya loses up to sh. 150 Billion ($1.5 Billion) worth of agricultural produce through post-harvest losses. Up to 13% of these losses constitutes Irish potatoes, yet, if stored at between 5-10 Celsius and 93% relative humidity, Irish potatoes can be stored up to 5 months. Precision agriculture increases the yield and reduces post-harvest losses for smallholder farmers. </p>
+				<p class="w3-livvic">ClimateSense is a tool that <b>senses</b> temperature, humidity, soil moisture and soil nutrients, <b>records</b> and <b>transmits</b> the data within a local database and remotely through SMS & allows for the <b>control</b> of actuators such as water valves, fans, switches within a controlled environment</p>
+			</div>
+		</div>
+	</div>
+</div>
 <p>this is the rest</p>
 
+<!-- Java Script -->
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 </body>
 </html>
