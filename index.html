@@ -10,6 +10,11 @@
 
 <style>
 
+button.fixedLink {
+  position: fixed;
+  top: 5;
+  left: 5;
+}
 .font-marck 
 {
   font-family: 'Marck Script', cursive;
@@ -79,11 +84,13 @@ h6 {font-size: 10%;}
 
 #homepage5
 {
-  border: 0px solid black;
-  background: url(images/tourism.jpg); 
+  border: 0px solid black; 
+  background: url(images/tourism.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+
 
 a:link {
   background-color: transparent;
@@ -108,164 +115,511 @@ li:hover
 	color: rgba(120, 36, 25, 0.9);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+div.goalbox 
+{
+  border: 1px solid #777;
+}
+
+div.goalbox:hover 
+{
+  border: 1px solid #fff;
+}
+
+div.goalbox img 
+{
+  width: 100%;
+  height: auto;
+}
+
+.responsive-goalbox 
+{
+  padding: 6px;
+  float: left;
+  width: 16%;
+  opacity: .5;
+}
+
+.responsive-goalbox:hover 
+{
+  padding: 6px;
+  float: left;
+  width: 16%;
+}
+
+.responsive-goalbox-done 
+{
+  padding: 6px;
+  float: left;
+  width: 16%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive-goalbox 
+  {
+    	width: 20%;
+    	padding: 1px;
+  }
+  .responsive-goalbox-done 
+	{
+  		width: 20%;
+  		padding: 1px;
+  		cursor: pointer;
+	}
+}
+
+
+@media only screen and (max-width: 500px) 
+{
+  .responsive-goalbox 
+  {
+    width: 32%;
+    padding: 1px;
+  }
+
+  .responsive-goalbox-done 
+	{
+	  width: 32%;
+	  padding: 1px;
+	  cursor: pointer;
+	}
+}
+
+
+
+.clearfix:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tooltip 
+{
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext 
+{
+  visibility: hidden;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltip .tooltiptext::after 
+{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+.tooltip .tooltiptextright 
+{
+  visibility: hidden;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.tooltip .tooltiptextright::after 
+{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+.tooltip:hover .tooltiptext 
+{
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip:hover .tooltiptextright 
+{
+  visibility: visible;
+  opacity: 1;
+}
 </style>
 </head>
 
-<body>
-	<!-- Sidebar -->
+	<body>
+		<!-- Sidebar -->
 
-	<div class="w3-sidebar w3-bar-block w3-border-right w3-mobile" style="display:none" id="mySidebar">
-  		<button onclick="w3_close()" class="w3-bar-item w3-large font-livvic">Close &times;</button>
-  		<a href="#" class="w3-bar-item w3-button">Home</a>
-  		<a href="#" class="w3-bar-item w3-button">Engineering</a>
-  		<a href="#" class="w3-bar-item w3-button">Community Development</a>
-  		<a href="#" class="w3-bar-item w3-button">Photography</a>
-  		<a href="#" class="w3-bar-item w3-button">Tourism</a>
-	</div>
+		<div class="w3-sidebar w3-bar-block w3-border-right w3-mobile" style="display:none" id="mySidebar">
+	  		<button onclick="w3_close()" class="w3-bar-item w3-large font-livvic">Close &times;</button>
+	  		<a href="#" class="w3-bar-item w3-button">Home</a>
+	  		<a href="#" class="w3-bar-item w3-button">Engineering</a>
+	  		<a href="#" class="w3-bar-item w3-button">Community Development</a>
+	  		<a href="#" class="w3-bar-item w3-button">Photography</a>
+	  		<a href="#" class="w3-bar-item w3-button">Tourism</a>
+		</div>
 
-	<!-- Page Content-Home Page -->
-	<div class="w3-mobile" style="width:100vw; height:100vh;">
-			<img src="images/write.jpg" alt="writing pad" style="height: 100%;width: 100%" class="cover">
-		<div class="w3-padding w3-display-topleft">
-  			<button class="w3-button w3-xlarge" style="background-color: rgb(196,199,206);color: rgb(120,36,25)"onclick="w3_open()">☰</button>
-  		</div>
+		<!-- Page Content-Home Page -->
+		<div class="w3-mobile" style="width:100vw; height:100vh;">
+				<img src="images/write.jpg" alt="writing pad" style="height: 100%;width: 100%" class="cover">
+			<div class="w3-padding w3-display-topleft">
+	  			<button class="w3-button w3-xlarge fixedLink" style="background-color: rgba(196,199,206,0);color: rgb(120,36,25)"onclick="w3_open()">☰</button>
+	  		</div>
 
-		<div class="w3-padding-small w3-display-middleup">
-    		<h1 class ="font-alex" style="font-size: 3vw;">Benjamin Kihuria</h1>
-  		</div>
+			<div class="w3-padding-small w3-display-middleup">
+	    		<h1 class ="font-alex" style="font-size: 3vw;">Benjamin Kihuria</h1>
+	  		</div>
 
-  		<div class="w3-display-middle w3-container" style="padding-right: 12%;padding-left: 10%; padding-top: 5%">
-  			<p class="font-livvic" style="font-size: 0.9vw; text-align: justify;">
-  				Hi I'm Benjamin,<br>
-  				I am inquisitive, I love to constantly discover and learn. My skills range from working with the poor in the various slums of Nairobi, capturing and sharing emotions and moments through DSLR photography, discovering the East African culture & landscapes through adventure tourism and sharing it through a highly rated travel company. Finally I am excited about the advancing technological and engineering solutions within Sub-Saharan Africa.         
-  			</p>
-  		</div>
-  		
-  		<div class="w3-border-right w3-display-middledown" style="min-width: 12%">
-  			<ul class="w3-ul w3-card font-lato" style="width:100%; background-color: rgba(120, 36, 25, 0.9);color: rgb(203,150,137); font-size: 1vw;">
-    			<a href="#ENG"><li style="border-bottom-style: dotted; border-color: rgb(196,199,206); border-width: .5px;">ENGINEERING</li></a>
-    			<a href="#COM"><li style="border-bottom-style: dotted; border-color: rgb(196,199,206); border-width: .5px">COMMUNITY DEV.</li></a>
-    			<a href="#PHO"><li style="border-bottom-style: dotted; border-color: rgb(196,199,206); border-width: .5px">PHOTOGRAPHY</li></a>
-    			<a href="#TOU"><li style="border-bottom-style: solid; border-color: rgba(196,199,206,0); border-width: .5px">TOURISM</li></a>
-  			</ul>
-  		</div>
-	</div>
+	  		<div class="w3-display-middle w3-container" style="padding-right: 12%;padding-left: 10%; padding-top: 5%">
+	  			<p class="font-livvic" style="font-size: 0.9vw; text-align: justify;">
+	  				Hi I'm Benjamin,<br>
+	  				I am inquisitive, I love to constantly discover and learn. My skills range from working with the poor in the various slums of Nairobi, capturing and sharing emotions and moments through DSLR photography, discovering the East African culture & landscapes through adventure tourism and sharing it through a highly rated travel company. Finally I am excited about the advancing technological and engineering solutions within Sub-Saharan Africa.         
+	  			</p>
+	  		</div>
+	  		
+	  		<div class="w3-border-right w3-display-middledown" style="min-width: 12%">
+	  			<ul class="w3-ul w3-card font-lato" style="width:100%; background-color: rgba(120, 36, 25, 0.9);color: rgb(203,150,137); font-size: 1vw;">
+	    			<a href="#ENG"><li style="border-bottom-style: dotted; border-color: rgb(196,199,206); border-width: .5px;">ENGINEERING</li></a>
+	    			<a href="#COM"><li style="border-bottom-style: dotted; border-color: rgb(196,199,206); border-width: .5px">COMMUNITY DEV.</li></a>
+	    			<a href="#PHO"><li style="border-bottom-style: dotted; border-color: rgb(196,199,206); border-width: .5px">PHOTOGRAPHY</li></a>
+	    			<a href="#TOU"><li style="border-bottom-style: solid; border-color: rgba(196,199,206,0); border-width: .5px">TOURISM</li></a>
+	  			</ul>
+	  		</div>
+		</div>
 
-	<!-- Page Content- Home Page section 2 engineering-->
-	<div id="ENG">	
-		<div id="homepage2" class="w3-cell-row" style="height: 100vh">
-			<div class="w3-cell w3-container" style="width: 10%; padding-top:3%"> 
-				<button class="w3-btn w3-border w3-border-green w3-round-large font-livvic" style="color:rgb(255,255,255)">Engineering</button>
-			</div>
+		<!-- Page Content- Home Page section 2 engineering-->
+		<div id="ENG">	
+			<div id="homepage2" class="w3-cell-row" style="height: 100vh">
+				<div class="w3-cell w3-container w3-mobile" style="width: 10%; padding-top:3%"> 
+					<button class="w3-btn w3-border w3-border-green w3-round-large font-livvic" style="color:rgb(255,255,255)">Engineering</button>
+				</div>
 
-			<div class="w3-cell w3-container" style="width: 60%; padding-top: 10%"> 
-				<p class="font-livvic"><i>"African solutions to African problems"</i></p>
-				<p class="font-livvic">Thabo Mbeki (South Africa president, 1999-2008)</p>
-			</div>
+				<div class="w3-cell w3-container w3-mobile" style="width: 60%; padding-top: 10%"> 
+					<p class="font-livvic"><i>"African solutions to African problems"</i></p>
+					<p class="font-livvic">Thabo Mbeki (South Africa president, 1999-2008)</p>
+				</div>
 
-			<div class="w3-cell w3-opacity w3-cell-middle" style="width:30%; background-color:rgb(18,80,5); color:rgb(255,234,189); font-size: 100%"> 
-				<div class="wb-card-4 w3-container">
-					<p class="font-livvic">Every year, Kenya loses up to sh. 150 Billion ($1.5 Billion) worth of agricultural produce through post-harvest losses. Up to 13% of these losses constitutes Irish potatoes, yet, if stored at between 5-10 Celsius and 93% relative humidity, Irish potatoes can be stored up to 5 months. Precision agriculture increases the yield and reduces post-harvest losses for smallholder farmers. </p>
-					<p class="font-livvic">ClimateSense is a tool that <b>senses</b> temperature, humidity, soil moisture and soil nutrients, <b>records</b> and <b>transmits</b> the data within a local database and remotely through SMS & allows for the <b>control</b> of actuators such as water valves, fans, switches within a controlled environment</p>
+				<div class="w3-cell w3-opacity w3-cell-middle w3-mobile" style="width:30%; background-color:rgb(18,80,5); color:rgb(255,234,189); font-size: 100%"> 
+					<div class="wb-card-4 w3-container">
+						<p class="font-livvic">Every year, Kenya loses up to sh. 150 Billion ($1.5 Billion) worth of agricultural produce through post-harvest losses. Up to 13% of these losses constitutes Irish potatoes, yet, if stored at between 5-10 Celsius and 93% relative humidity, Irish potatoes can be stored up to 5 months. Precision agriculture increases the yield and reduces post-harvest losses for smallholder farmers. </p>
+						<p class="font-livvic">ClimateSense is a tool that <b>senses</b> temperature, humidity, soil moisture and soil nutrients, <b>records</b> and <b>transmits</b> the data within a local database and remotely through SMS & allows for the <b>control</b> of actuators such as water valves, fans, switches within a controlled environment</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Page Content- Home Page section 3 community development-->
-	<div id="COM">
-		<div id="homepage3" class="w3-cell-row" style="height: 100vh; padding-top:5%; padding-bottom:5%">
-				<div class="w3-container" style="background-color:rgba(255,255,255,0.5); height: 100%">
-					<div class="w3-cell w3-container" style="width: 10%;padding-top: 3%"> 
-						<button class="w3-btn w3-round-large font-livvic" style="color:rgb(15,22,28); border-style: solid; border-color:rgb(15,22,28); border-width: 1px">Community Development</button>
-					</div>
+		<!-- Page Content- Home Page section 3 community development-->
+		<div id="COM">
+			<div id="homepage3" class="w3-cell-row" style="height: 100vh; padding-top:5%; padding-bottom:5%">
+					
+					<div class="w3-container" style="background-color:rgba(255,255,255,0.5); height: 100%">
 
-					<div class="w3-cell w3-container" style="width: 60%; padding-top: 10%"> 
-						<p class="font-livvic">Sustainable Development Goals</p>
-					</div>
+						<div class="w3-cell" style="width: 70%;"> 
+							<div class="w3-container font-livvic">
+								<button class="w3-btn w3-round-large font-livvic" style="color:rgb(15,22,28); border-style: solid; border-color:rgb(15,22,28); border-width: 1px; font-size: 100%;background-color: rgba(255,255,255,0.8);">Community Development</button>
+								<span style="background-color: rgba(0,0,0,.5);color: rgba(255,255,255,0.95);margin-top: 2px;">Click on a highlighted goal to read (on the right) more on what I have worked on</span>
+							</div>
+							
+							
+							<div class="w3-container font-livvic responsive-goalbox:hover">
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg1text()"><img src="images/goals/sdg1.png" alt="SDG1 icon">
+										<span class="tooltiptextright">Goal 1: End poverty in all its forms everywhere</span>
+									</div>
+								</div>
 
-					<div class="w3-cell w3-cell-middle" style="width:30%; font-size: 100%"> 
-						<div class="wb-card-4 w3-container ">
-							<p class="font-livvic">There is no silver bullet that will end poverty. However there are trials that have proven successful. Education has proven to be a key 
-							</p>
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg2text()"><img src="images/goals/sdg2.png" alt="SDG2 icon">
+										<span class="tooltiptext">Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg3text()"><img src="images/goals/sdg3.png" alt="SDG3icon">
+									<span class="tooltiptext">Goal 3: Ensure healthy lives and promote well-being for all at all ages</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg4text()"><img src="images/goals/sdg4.png" alt="SDG4 icon">
+									<span class="tooltiptext">Goal 4: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg5text()"><img src="images/goals/sdg5.png" alt="SDG5 icon">
+									<span class="tooltiptext">Goal 5: Achieve gender equality and empower all women and girls</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg6text()"><img src="images/goals/sdg6.png" alt="SDG6 icon">
+									<span class="tooltiptext">Goal 6: Ensure availability and sustainable management of water and sanitation for all</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox">
+									<div class="goalbox tooltip"><img src="images/goals/sdg7.png" alt="SDG7 icon">
+									<!-- <span class="tooltiptextright">Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all</span> -->
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg8text()"><img src="images/goals/sdg8.png" alt="SDG8 icon">
+									<span class="tooltiptext">Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for alls</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox">
+									<div class="goalbox tooltip"><img src="images/goals/sdg9.png" alt="SDG9 icon">
+									<!-- <span class="tooltiptext">Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation</span> -->
+									</div>
+								</div>
+
+								<div class="responsive-goalbox">
+									<div class="goalbox tooltip"><img src="images/goals/sdg10.png" alt="SDG10 icon">
+										<!-- <span class="tooltiptext">Goal 10: Reduce inequality within and among countries</span> -->
+									</div>
+								</div>
+
+								<div class="responsive-goalbox">
+									<div class="goalbox tooltip"><img src="images/goals/sdg11.png" alt="SDG11 icon">
+									<!-- <span class="tooltiptext">Goal 11: Make cities and human settlements inclusive, safe, resilient and sustainable</span> -->
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg12text()"><img src="images/goals/sdg12.png" alt="SDG12 icon">
+										<span class="tooltiptext">Goal 12: Ensure sustainable consumption and production patterns</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox">
+									<div class="goalbox tooltip"><img src="images/goals/sdg13.png" alt="SDG13 icon">
+									<!-- <span class="tooltiptextright">Goal 13: Take urgent action to combat climate change and its impacts</span> -->
+									</div>
+								</div>
+
+								<div class="responsive-goalbox">
+									<div class="goalbox tooltip"><img src="images/goals/sdg14.png" alt="SDG14 icon">
+									<!-- <span class="tooltiptext">Goal 14: Conserve and sustainably use the oceans, seas and marine resources for sustainable development</span> -->
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg15text()"><img src="images/goals/sdg15.png" alt="SDG15 icon">
+									<span class="tooltiptext">Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss</span>
+									</div>
+								</div>
+
+								<div class="responsive-goalbox">
+									<div class="goalbox tooltip"><img src="images/goals/sdg16.png" alt="SDG16 icon">
+									<!-- <span class="tooltiptext">Goal 16: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels</span> -->
+									</div>
+								</div>
+
+								<div class="responsive-goalbox-done">
+									<div class="goalbox tooltip" onclick="sdg17text()"><img src="images/goals/sdg17.png" alt="SDG17 icon">
+									<span class="tooltiptext">Goal 17: Strengthen the means of implementation and revitalize the global partnership for sustainable development</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="w3-cell" style="width:30%; font-size: 100%; padding-top:3%;"> 
+							<div class="w3-container" style="width: 100%;height: 100%; background-color: rgba(0,0,0,0.6); color: rgba(255,255,255,0.8);">
+								<p class="font-lato" id="sdgname" style="text-transform: uppercase;"></p>
+								<p class="font-lato" id="sdgtitle"></p>
+								<p class="font-lato" id="sdgtext"> Since 2013 I have worked within 10 Sustainable Development Goals with Community Based Organizations, Non Governmental Organizations and Non Profit Organizations in Kibera, Mukuru kwa Kayaba, Mukuru kwa Njenga, Mathare, Ngando and Kawangware slums, as well as in Makuyu in Muranga County and in Lamu Islands.  
+								There is no silver bullet that will end poverty. However there are  that have proven successful. Education has proven to be a key </p>
+							</div>
 						</div>
 					</div>
-				</div>
+			</div>
 		</div>
-	</div>
 
-<!-- Page Content- Home Page section 4 Photography -->
-	<div id="PHO">	
-		<div id="homepage4" class="w3-cell-row" style="height: 100vh;"> 
-			
-			<div class="w3-container w3-cell w3-opacity" style="width:30%;padding-top: 3%;padding-left: 4%; padding-right: 2%">
-				<div class="w3-container" style="width: 100%; height: 10%;">
-					<button class="w3-btn w3-round-large font-livvic" style="color:rgb(15,22,28); border-style: solid; border-color:rgb(15,22,28); border-width: 1px">Photography</button>
-				</div>
-				<div class="w3-container w3-black" style="width: 100%; height: 52%; margin-top: 35%;"></div>
-	  		</div>
-	  			
-	  		<div class="w3-container w3-opacity w3-cell" style="padding-top: 6%; padding-right: 2%; padding-left: 4% ; width:30%;">
-	    		<div class="w3-container w3-black" style="width: 100%; height: 57%"></div>
-	  		</div>
-	  			
-	  		<div class="w3-container w3-opacity w3-cell w3-mobile" style="padding-top: 14%; padding-right: 13%; padding-left: 4% ; width: 40%;">
-	    		<div class="w3-container w3-black" style="width: 100%; height: 70%"></div>
-	  		</div>
+	<!-- Page Content- Home Page section 4 Photography -->
+		<div id="PHO">	
+			<div id="homepage4" class="w3-cell-row" style="height: 100vh;"> 
+				
+				<div class="w3-container w3-cell w3-opacity" style="width:30%;padding-top: 3%;padding-left: 4%; padding-right: 2%">
+					<div class="w3-container" style="width: 100%; height: 10%;">
+						<button class="w3-btn w3-round-large font-livvic" style="color:rgb(15,22,28); border-style: solid; border-color:rgb(15,22,28); border-width: 1px">Photography</button>
+					</div>
+					<div class="w3-container w3-black" style="width: 100%; height: 52%; margin-top: 35%;"></div>
+		  		</div>
+		  			
+		  		<div class="w3-container w3-opacity w3-cell" style="padding-top: 6%; padding-right: 2%; padding-left: 4% ; width:30%;">
+		    		<div class="w3-container w3-black" style="width: 100%; height: 57%"></div>
+		  		</div>
+		  			
+		  		<div class="w3-container w3-opacity w3-cell w3-mobile" style="padding-top: 14%; padding-right: 13%; padding-left: 4% ; width: 40%;">
+		    		<div class="w3-container w3-black" style="width: 100%; height: 70%"></div>
+		  		</div>
+			</div>
 		</div>
-	</div>
 
-	<!-- Page Content- Home Page section 5 tourism and contacts-->
-	<div id="TOU">
-		<div id="homepage5" class="w3-cell-row" style="height: 100vh; padding-top:5%; padding-bottom:5%">
-				<div class="w3-cell w3-mobile" style="width: 30%;padding-top: 3%;background-color:rgba(220,155,101,0.5); color:rgba(252,230,207,1); ; text-align: center; "> 
-					<button class="w3-btn w3-round-large font-livvic" style=" border-style: solid; border-color:rgba(252,230,207,0.5); border-width: 1px">Tourism</button>
+		<!-- Page Content- Home Page section 5 tourism and contacts-->
+		<div id="TOU">
+			<div id="homepage5" class="w3-cell-row" style="height: 100vh; padding-top:1%; padding-bottom:1%">
+				<div class="w3-cell w3-mobile" style="width: 30%;padding-left: 5.5%; padding-bottom: 1%; background-color:		rgba(220,155,101,0.5); color:rgba(252,230,207,1);padding-top: 0%;"> 
+						<button class="w3-btn w3-round-large font-livvic" style=" border-style: solid; border-color:rgba(252,230,207,0.5); border-width: 1px; margin-left: 23%">Tourism</button>
+						
+						<div id="TA_excellent494" class="TA_excellent" style="margin-left: 10%">
+							<ul id="jF2IcXsyrQ" class="TA_links 1bhQ0DE">
+								<li id="2W0PUQSciqoJ" class="4sdq5x1oLj">
+									<a target="_blank" href="https://www.tripadvisor.com/"> 
+										<img src="https://static.tacdn.com/img2/widget/tripadvisor_logo_115x18.gif" alt="TripAdvisor" class="widEXCIMG" id="CDSWIDEXCLOGO"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<script async src="https://www.jscache.com/wejs?wtype=excellent&amp;uniq=494&amp;						locationId=17377308&amp;lang=en_US&amp;display_version=2" data-loadtrk onload="this.data-loadtrk=true"></script>
+
+						<div id="TA_selfserveprop608" class="TA_selfserveprop">
+							<ul id="iUndpNh2" class="TA_links XO45xnICPg">
+								<li id="BfHIdrlX0" class="8f7f3d">
+									<a target="_blank" href="https://www.tripadvisor.com/">
+										<img src="https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<script async src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=608&amp;locationId=17377308&amp;lang=en_US&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=false&amp;border=false&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
 				</div>
 
-				<div class="w3-cell w3-container w3-mobile" style="width: 40%; padding-top: 10%; background-color:rgba(255,234,189,0);"> 
+				<div class="w3-cell w3-container" style="width: 40%; background-color:rgba(255,234,189,0);"> 
 				</div>
 
 				<div class="w3-cell w3-mobile" style="width:30%; padding-top: 3%;background-color:rgba(220,155,101,0.5);color:rgba(252,230,207,1); ; font-size: 100%; text-align: center;"> 
-					<button class="w3-btn w3-round-large font-livvic" style="border-style: solid; border-color:rgba(252,230,207,0.5); border-width: 1px">Contact Me</button>
-					<div class="wb-card-4 w3-container">
-						<p class="font-livvic">Reach out to me!</p>
-					</div>
+					<button class="w3-btn w3-round-large font-lato" style="border-style: solid; border-color:rgba(252,230,207,0.5); border-width: 1px">Contact Me</button>
+					<div class="wb-card-4 w3-container font-livvic" style="padding-right: 10%;padding-left: 10%">
+						<p>Please fill out the form below to reach me</p>
+						<form action="/action_page.php">
+							Name:
+							<br>
+							<input required type="text" name="firstname" placeholder="Your Names" style="width: 100%;">
+							<br>
+							Email:
+							<br>
+							<input required type="text" name="email" placeholder="Your Email Address" style="width:100%;" >
+							<br>
+							<br>
+							<input type="submit" value="Submit">
+						</form> 
 					</div>
 				</div>
+			</div>
 		</div>
-	</div>
 
-	<!-- sdg -->
-	<div class="row small-up-2 medium-up-4 large-up-6 sdg align-center">
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 1: End poverty in all its forms everywhere"><a href="/content/undp/en/home/sustainable-development-goals/goal-1-no-poverty.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-01.png" alt="SDG1 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture"><a href="/content/undp/en/home/sustainable-development-goals/goal-2-zero-hunger.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-02.png" alt="SDG2 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 3: Ensure healthy lives and promote well-being for all at all ages"><a href="/content/undp/en/home/sustainable-development-goals/goal-3-good-health-and-well-being.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-03.png" alt="SDG3icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 4: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all"><a href="/content/undp/en/home/sustainable-development-goals/goal-4-quality-education.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-04.png" alt="SDG4 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 5: Achieve gender equality and empower all women and girls"><a href="/content/undp/en/home/sustainable-development-goals/goal-5-gender-equality.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-05.png" alt="SDG5 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 6: Ensure availability and sustainable management of water and sanitation for all"><a href="/content/undp/en/home/sustainable-development-goals/goal-6-clean-water-and-sanitation.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-06.png" alt="SDG6 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all"><a href="/content/undp/en/home/sustainable-development-goals/goal-7-affordable-and-clean-energy.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-07.png" alt="SDG7 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all"><a href="/content/undp/en/home/sustainable-development-goals/goal-8-decent-work-and-economic-growth.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-08.png" alt="SDG8 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation"><a href="/content/undp/en/home/sustainable-development-goals/goal-9-industry-innovation-and-infrastructure.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-09.png" alt="SDG9 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 10: Reduce inequality within and among countries"><a href="/content/undp/en/home/sustainable-development-goals/goal-10-reduced-inequalities.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-10.png" alt="SDG10 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 11: Make cities and human settlements inclusive, safe, resilient and sustainable"><a href="/content/undp/en/home/sustainable-development-goals/goal-11-sustainable-cities-and-communities.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-11.png" alt="SDG11 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 12: Ensure sustainable consumption and production patterns"><a href="/content/undp/en/home/sustainable-development-goals/goal-12-responsible-consumption-and-production.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-12.png" alt="SDG12 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 13: Take urgent action to combat climate change and its impacts"><a href="/content/undp/en/home/sustainable-development-goals/goal-13-climate-action.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-13.png" alt="SDG13 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 14: Conserve and sustainably use the oceans, seas and marine resources for sustainable development"><a href="/content/undp/en/home/sustainable-development-goals/goal-14-life-below-water.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-14.png" alt="SDG14 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss"><a href="/content/undp/en/home/sustainable-development-goals/goal-15-life-on-land.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-15.png" alt="SDG15 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 16: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels"><a href="/content/undp/en/home/sustainable-development-goals/goal-16-peace-justice-and-strong-institutions.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-16.png" alt="SDG16 icon"></a></div>
-<div class="column" data-tooltip aria-haspopup="true" title="Goal 17: Strengthen the means of implementation and revitalize the global partnership for sustainable development"><a href="/content/undp/en/home/sustainable-development-goals/goal-17-partnerships-for-the-goals.html"><img src="/content/dam/undp/sdg/tiles/sdg-en-17.png" alt="SDG17 icon"></a></div>
+		<!-- Java Script -->
+		<script>
+			function w3_open() 
+			{
+	 	 		document.getElementById("mySidebar").style.display = "block";
+			}
 
-	<!-- Java Script -->
-	<script>
-		function w3_open() 
-		{
- 	 		document.getElementById("mySidebar").style.display = "block";
-		}
+			function w3_close() 
+			{
+	  			document.getElementById("mySidebar").style.display = "none";
+			}
+		</script>
 
-		function w3_close() 
-		{
-  			document.getElementById("mySidebar").style.display = "none";
-		}
-	</script>
-</body>
+		<script>
+			function sdg1text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 1 - No Poverty";
+	  			document.getElementById("sdgtitle").innerHTML = "Kayaba School - Mukuru, 2014";
+	  			document.getElementById("sdgtext").innerHTML = "A project within Kayaba School to empower parents of children by financing 2 parents to sewing school & providing material and sewing machine. Another 2, we financed their charcoal business. We then built accommodation for the school which they rented out to provide the school with a means to finance themselves outside of school fees (which can be intermittent)";
+			}
+
+			function sdg2text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 2 - Zero Hunger";
+	  			document.getElementById("sdgtitle").innerHTML = "Kayaba School - Mukuru, 2014,2015,2016,2017<br> FRANK School - Ngando, 2015";
+	  			document.getElementById("sdgtext").innerHTML = "We financed a lunchtime feeding program within the schools. For some of the 250+ students in each school, this would be the only meal that they have for the day. ";
+			}
+
+			function sdg3text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 3 - Good Health and Well-being";
+	  			document.getElementById("sdgtitle").innerHTML = "Safari Doctors - Lamu, 2017, 2018 <br> Project Healthy and Happy - Nairobi, 2014, 2016, 2017, 2018";
+	  			document.getElementById("sdgtext").innerHTML = "In the Lamu islands, notable health-care is only available in the mainland and thus for the islanders marooned by the ocean, the Safari Doctor's monthly visit for consultation, diagnosis and dispensation of medicine by medical volunteers makes a huge difference to the communities. We provided medical volunteers.<br> In Project Healthy and Happy, we ran medical check-ups, diagnosis and treatment for 1000+ students across primary and secondary schools. We also donated fully equipped first aid kits to each school.";
+			}
+			
+			function sdg4text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 4 - Quality Education";
+	  			document.getElementById("sdgtitle").innerHTML = " Chari Project - Kwale, 2017 to present<br> From Kibera with Love - Kibra, 2015-present<br> Kayaba School - Mukuru, 2014-present<br> FRANK SCHOOL 2015,2016";
+	  			document.getElementById("sdgtext").innerHTML = "We provided 5 volunteer teacher assistants every two month cycles in the various schools, thereby increasing the teacher to student ratio and increasing overall performance. <br>We sponsor a girl in Kwale, from a public school which was setting her back educationally to a private school in which she is excelling to date.<br>In Kibra, the quality of education in the community schools (that are affordable to most) is wanting. From Kibera with Love sponsors children to various private schools and provides after school tuition. The students are currently excelling in their studies and to university.";
+			}
+			
+			function sdg5text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 5 - Gender Equality";
+	  			document.getElementById("sdgtitle").innerHTML = "Women empowerment centre - Mathare 2017, Makuyu Empowerment Centre - Makuyu 2016";
+	  			document.getElementById("sdgtext").innerHTML = "In Mathare, a community based Organization known as community transformers helps the vulnerable in the slums particularly women. We helped to build a children's daycare which would bring an income for the women involved<br>In Makuyu we purchased a 100 seater tent for a women's group which they can use for their own meetings and rent it out for events which then earns them an income";
+			}
+			
+			function sdg6text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 6 - Clean Water and Sanitation";
+	  			document.getElementById("sdgtitle").innerHTML = "Kayaba School - Mukuru, 2014, Frank School - Ngando, 2015";
+	  			document.getElementById("sdgtext").innerHTML = "Illness and diseases contribute a big deal to shocks that trap the poor in a vicious (poverty) cycle. We bought 5000 litre water tanks and chlorine for the schools. We also installed washing sinks and provided soap for hand-washing which reduces communicable diseases";
+			}
+			
+			function sdg8text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 8 - Decent work and Economic Growth ";
+	  			document.getElementById("sdgtitle").innerHTML = "Community centre Mathare, 2017";
+	  			document.getElementById("sdgtext").innerHTML = "We built and equipped a day-care centre for women working in Mathare";
+			}
+			
+			function sdg12text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 12 - Responsible Consumption and Production ";
+	  			document.getElementById("sdgtitle").innerHTML = "9 Billion Lives - Nairobi, 2018<br>Project Carbon Food Credit - Nairobi, 2015 ";
+	  			document.getElementById("sdgtext").innerHTML = "I participated in a two day food waste hackathon organized by 9 Billion Lives.This involved coming up with ideas and eventually a business plan along the food value chain.<br> In Project Carbon Food Credit, the aim was to reduce food waste by restaurants and supermarkets by redirecting the food to the needy";
+			}
+			
+			function sdg15text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 15 - Life on Land ";
+	  			document.getElementById("sdgtitle").innerHTML = "Rhino Charge, 2017, 2018, 2019";
+	  			document.getElementById("sdgtext").innerHTML = "The Rhino Charge is an annual off-road motorsport competition held in Kenya in which entrants are required to visit a number of points (Guard Posts) while travelling the shortest possible distance across difficult, trackless terrain, where speed is not a necessity.<br>For over 25 years Rhino Ark has been raising funds for the building and maintenance of an electrified fence that encircles nearly 400 km of the Aberdare ecosystem. The fence is a vital management tool for ensuring the ecosystem's long-term integrity. In 2010 Rhino Ark announced a formal commitment to support conservation of other mountain forest ecosystems in Kenya, starting with Mount Kenya and Mount Mau Eburu. These new initiatives are undertaken in addition to the long term commitment to the Aberdares.";
+			}
+			
+			function sdg17text() 
+			{ 
+	  			document.getElementById("sdgname").innerHTML = "SDG 17 - Partnerships for the Goals";
+	  			document.getElementById("sdgtitle").innerHTML = "AIESEC in Kenya, 2014 to 2018";
+	  			document.getElementById("sdgtext").innerHTML = "I worked within AIESEC in Kenya for 5 years, formulating and enacting partnerships. I eventually worked as the National director for incoming exchange in 2017-2018";
+			}
+		</script>
+	</body>
 </html>
