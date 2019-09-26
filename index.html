@@ -504,22 +504,21 @@
 		<!-- Page Content- Home Page section 4 Photography -->
 		<div id="PHO">	
 			<div id="homepage4" class="w3-cell-row" style="height: 100vh;">
-				<div class="w3-container w3-cell w3-mobile" style="width:30%;padding-top: 3%;padding-left:4%; padding-right:2%;">
+				<div class="w3-container w3-cell w3-mobile" style="width:30%;padding-left:0%; padding-right:5%;">
 					<p class= "title">Photography</p>
-					<div class="w3-container w3-opacity w3-black" style="width: 100%; height: 52%; margin-top: 35%;"
-			    		<img src="images/tourism.jpg" style="width:100%;cursor:pointer"
-			    		onclick="openModal();currentDiv(1)" class="w3-hover-shadow">
+					<div class="w3-container" style="width: 100%; height: 52%; margin-left: -5%; cursor: pointer;"
+			    		<img src="images/tourism.jpg" style="width:100%;" onclick="openModal();currentDiv(1)" class="w3-hover-shadow">
 			 		</div>
 				</div>
-				<!-- image displayed as lightbox -->
-				<div id="myModal" class="w3-modal w3-black">
+				<!--lightbox -->
+				<div id="myModal" class="w3-modal">
 				 	<span class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright" onclick="closeModal()" style="cursor:pointer">×</span>
 			 	<div class="w3-modal-content">
 
-				  	<div class="w3-content" style="max-width:1200px">
-				   		<img class="mySlides" src="images/tourism.jpg" style="width:100%">
-				   		<img class="mySlides" src="images/tractor.jpg" style="width:100%">
-				   		<img class="mySlides" src="images/comm-dev.jpg" style="width:100%">
+				  	<div class="w3-content">
+				   		<img class="mySlides" src="images/elephant.jpg" style="width:100%">
+				   		<img class="mySlides" src="images/flight.jpg" style="width:100%">
+				   		<img class="mySlides" src="images/lioness.jpg" style="width:100%">
 
 				   		<div class="w3-row w3-black w3-center">
 				   			<div class="w3-display-container">
@@ -530,15 +529,15 @@
 				    		<!-- images at bottom of modal -->
 
 				    		<div class="w3-col s4">
-				     			<img class="demo w3-opacity w3-hover-opacity-off" src="images/tourism.jpg" style="width:100%" onclick="currentDiv(1)" alt="Nature and sunrise">
+				     			<img class="demo w3-opacity w3-hover-opacity-off" src="images/elephant.jpg" style="width:100%" onclick="currentDiv(1)" alt="Bull Elephant">
 				    		</div>
 
 				    		<div class="w3-col s4">
-				     			<img class="demo w3-opacity w3-hover-opacity-off" src="images/tourism.jpg" style="width:100%" onclick="currentDiv(2)" alt="French Alps">
+				     			<img class="demo w3-opacity w3-hover-opacity-off" src="images/flight.jpg" style="width:100%" onclick="currentDiv(2)" alt="Vulture in flight">
 				    		</div>
 
 				    		<div class="w3-col s4">
-				     			<img class="demo w3-opacity w3-hover-opacity-off" src="images/tourism.jpg" style="width:100%" onclick="currentDiv(3)" alt="Mountains and fjords">
+				     			<img class="demo w3-opacity w3-hover-opacity-off" src="images/lioness.jpg" style="width:100%" onclick="currentDiv(3)" alt="Lioness">
 				    		</div>
 				   		</div> <!-- End row -->
 				  	</div> <!-- End w3-content -->
@@ -617,13 +616,5 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- lightbox -->
-		<div class="w3-container">
-			<!-- image to be clicked -->
-			<h2>W3.CSS Lightbox</h2>
-			<p>In this example we combine JavaScript from Slideshows and Modals to create a Lightbox (Modal Image Gallery):</p>
-			 <!-- End modal content -->
-		</div> <!-- End modal -->
 	</body>
 </html>
